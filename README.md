@@ -18,6 +18,7 @@
 }
 
 Полученные метрики на валидационной выборке:
+
 ![image](https://github.com/user-attachments/assets/0ef884af-aae2-4c54-af5a-3bc665445121)
 
 
@@ -26,9 +27,10 @@
 - видеокарта с compute_capability >= 30
   https://developer.nvidia.com/cuda-gpus
 
-Инструкция по установке и запуску
+**Инструкция по установке и запуску:**
 
-Локальный запуск
+**Локальный запуск:**
+
 Установите зависимости:
 
 bash
@@ -41,7 +43,7 @@ API будет доступно по адресу: http://localhost:8000
 
 Либо в директории проекта\app запустите dev_test.py
 
-Запуск в Docker
+**Запуск в Docker:**
 Соберите образ:
 
 bash (из директории проекта)
@@ -51,7 +53,7 @@ docker build -t sentiment-api .
 bash
 docker run -p 8000:8000 sentiment-api
 
-Использование API
+**Использование API:**
 Отправьте POST-запрос на /predict с JSON-телом:
 
 json
