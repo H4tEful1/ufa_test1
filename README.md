@@ -45,6 +45,11 @@ pip install -r requirements.txt
 uvicorn main:app --reload
 Документация API доступна по адресу http://localhost:8000/docs (Swagger UI)
 
+```
+### Docker установка
+
+```bash
+
 # Сборка образа
 docker build -t sentiment-api .
 
@@ -66,6 +71,7 @@ json
   "sentiment": "positive",
   "confidence": 0.92
 }
+```
 📚 Документация
 Интерактивная документация доступна после запуска:
 
@@ -73,6 +79,7 @@ Swagger UI: http://localhost:8000/docs
 
 Redoc: http://localhost:8000/redoc
 
-🧪 Тестирование
-bash
-pytest tests/
+🧪 Тестирование из директории проекта
+```bash
+pytest 
+```
