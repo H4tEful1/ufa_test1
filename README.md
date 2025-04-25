@@ -23,6 +23,11 @@
 - [RusentiTweet](https://example.com)
 - [TweetEval](https://huggingface.co/datasets/tweet_eval)
 
+## Можно улучшить
+
+- Увеличить датасет, в частности на русском языке, в текущем было ~51тыс. строк в сумме по двум языкам и 3-ем классам
+- Потратить больше времени на обучение, данная модель обучалась в бесплатной версии Google colab ~1ч30мин
+
 **Метрики на валидационной выборке:**
 
 ![Metrics](https://github.com/user-attachments/assets/0ef884af-aae2-4c54-af5a-3bc665445121)
