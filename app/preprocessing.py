@@ -7,19 +7,16 @@ from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
 from nltk.corpus import stopwords
 from config.logs_config import *
 
-# Load spaCy models for both English and Russian
 try:
     nlp_en = spacy.load("en_core_web_sm")
     nlp_ru = spacy.load("ru_core_news_sm")
 except OSError:
-    # If models aren't downloaded, install them first
     import subprocess
     subprocess.run(["python", "-m", "spacy", "download", "en_core_web_sm"])
     subprocess.run(["python", "-m", "spacy", "download", "ru_core_news_sm"])
     nlp_en = spacy.load("en_core_web_sm")
     nlp_ru = spacy.load("ru_core_news_sm")
 
-# Load stopwords
 nltk.download('stopwords')
 ru_stopwords = set(stopwords.words('russian'))
 en_stopwords = ENGLISH_STOP_WORDS
@@ -47,7 +44,6 @@ def clean_text(text: str) -> str:
 
 
 def tokenize_with_spacy(text: str, lang: str) -> List[str]:
-    """Tokenize using spaCy (better for both English & Russian)."""
     doc = nlp_ru(text) if lang == "ru" else nlp_en(text)
     return [token.text for token in doc if not token.is_punct]
 
@@ -69,7 +65,6 @@ def preprocess(text: str) -> str:
 
         logger_interface.info(f"Starting preprocessing for text: {text[:50]}...")
 
-        # Detect language (fallback to English if uncertain)
         lang = detect_language(text) or "en"
         logger_interface.debug(f"Detected language: {lang}")
 
